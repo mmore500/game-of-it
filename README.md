@@ -1,37 +1,23 @@
-## Welcome to GitHub Pages
+# Making a Game of IT
 
-You can use the [editor on GitHub](https://github.com/amlalejini/2019-msu-pygame/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Find a schedule for the Making a Game of IT programming camp [here](https://www.egr.msu.edu/future-engineer/sites/default/files/content/mgit_2019_0.pdf).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Camping
 
-### Markdown
+- [Day 1 (Monday) - Introduction to Python](./day-1/)
+- [Day 2 (Tuesday) - Introduction to Pygame](./day-2/)
+- [Day 3 (Wednesday) - Advanced Pygame](./day-3/)
+- [Day 4 (Thusday) - Game design](./day-4/)
+- [Day 5 (Friday) - Game design & demos](./day-5/)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## More Resources
 
-```markdown
-Syntax highlighted code block
+- [Python v3.7 documentation](https://docs.python.org/3.7/)
+- [pygame documentation](https://www.pygame.org/docs/)
+- [Thonny](https://thonny.org/)
 
-# Header 1
-## Header 2
-### Header 3
+## Instructor Information
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/amlalejini/2019-msu-pygame/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- [Dr. Josh Nahum](http://www.nahum.us/)
+- [Matthew Andres Moreno](https://mmore500.github.io/)
+- [Alexander Lalejini](https://lalejini.com/)
