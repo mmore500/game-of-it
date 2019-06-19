@@ -33,7 +33,7 @@ The code for this section is in [basics.py](./basics.py).
 
 Comments give programmers a way to annotate their code.
 
-```Python
+```python
 # '#' denotes a single-line comment. For example,
 # This is a single-line comment!
 
