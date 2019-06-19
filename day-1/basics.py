@@ -105,6 +105,13 @@ print("So that I can spit it right back at you: " + user_input)
 # CHALLENGE: Adjust your program so that it takes a user's name and age
 #            in as input, and prints the year they were born.
 
+#####################################
+# More things you can do with strings
+#####################################
+
+# More stuff you can do with strings: https://docs.python.org/3/library/stdtypes.html#string-methods
+print(first_name.upper()) # All caps!
+print(first_name.lower()) # All lowercase!
 
 #####################################
 # Extra challenges
