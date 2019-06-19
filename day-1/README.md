@@ -68,7 +68,7 @@ Why use comments?
 
 We can use the `print` instruction to print things to the screen:
 
-```Python
+```python
 print("Hello world")
 print("My name is Alex Lalejini")
 print("I'm 26 years old.")
@@ -87,7 +87,7 @@ refer to their values.
 
 We can assign _'strings'_ to variables:
 
-```Python
+```python
 first_name = "Alex"     # This is a string
 last_name = "Lalejini"  # This is also a string
 ```
@@ -97,7 +97,7 @@ using the assignment operator `=`.
 
 We can also assign _numbers_ to variables:
 
-```Python
+```python
 age = 26              # This is an integer
 half_of_three = 3.5   # This is a float (i.e., it has a decimal)
 ```
@@ -105,7 +105,7 @@ half_of_three = 3.5   # This is a float (i.e., it has a decimal)
 We can _refer_ to previously assigned variables. For example, we can print out
 the values of some of our variables:
 
-```Python
+```python
 print(first_name)
 print(last_name)
 print(age)
