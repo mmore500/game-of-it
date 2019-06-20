@@ -34,10 +34,6 @@ while True:
 
 print('End')
 
-
-
-
-
 # Challenge: Get rid of the magic numbers (min secret value and max secret value)
 # Challenge: Tell the user how many guesses it took them to win
 # Challenge question: What's the optimal strategy for playing this game?
