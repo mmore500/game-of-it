@@ -8,6 +8,10 @@
   - [Comments in Python](#comments-in-python)
   - [Printing to the screen](#printing-to-the-screen)
   - [What is a variable?](#what-is-a-variable)
+  - [Python can be used as a glorified calculator](#python-can-be-used-as-a-glorified-calculator)
+  - [Getting user input](#getting-user-input)
+  - [Working with strings](#working-with-strings)
+  - [Challenges](#challenges)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
 - [Python - data structures](#python---data-structures)
 
@@ -21,7 +25,7 @@ Why python?
 ### Getting Started
 
 - Make your own directory on the shared network drive.
-- Thonny
+- [Thonny](https://thonny.org/) _should_ already be installed on your computer!
   - Thonny is an Integrated Development Environment (IDE) for Python. In simpler terms, it's the application you'll use to edit and run your Python programs.
   - There should be a shortcut on your desktop for Thonny. If you can't find it (or it doesn't work), let us know!
 
@@ -72,7 +76,7 @@ We can use the `print` instruction to print things to the screen:
 print("Hello world")
 print("My name is Alex Lalejini")
 print("I'm 26 years old.")
-print("I thought Avengers: Endgame was just okay.")
+print("Ikea is adult disney land.")
 ```
 
 Note that every time you run your program, those sentences are in the same order.
@@ -81,9 +85,9 @@ top to bottom.
 
 ### What is a variable?
 
-We use variables to store and later refer to data or values. In other words,
-we can _assign_ values to variables, and then we can use those variables to later
-refer to their values.
+We use variables to store data and subsequently refer to that data. As a pet name lets us to refer to our 🐶, variables give us a way to refer to our data.
+
+Variables in python must _begin_ with a letter or underscore, but after the first character letters, numbers, and underscores are 👌. In contrast to pet names (where your pet does not care about the capitalization of their name), python variables are case sensitive (i.e, 'DOGGO' is not the same as 'doggo').
 
 We can assign _'strings'_ to variables:
 
@@ -111,8 +115,59 @@ print(last_name)
 print(age)
 ```
 
-{% include linkinclude.html file='basics.py' %}
+### Python can be used as a glorified calculator
 
+You can (and we will) use python as a fancy calculator. All the classics are available out of the box: addition `+`, subtraction `-`, multiplication `*`, division `/`, modulus `%` (remainder), and exponentiation `**`.
+
+In python:
+```python
+this_year = 2019
+my_age = 26
+
+twice_my_age = 2 * age
+
+ten_years_from_now = this_year + 10
+
+year_born = this_year - my_age
+
+half_my_age = age / 2
+```
+
+Just like in math class, you can enforce a particular order of operations using parentheses:
+
+```python
+a = (1 + 1) * (2 + 2) # = 8
+# is different from
+b = 1 + 1 * 2 + 2     # = 5
+```
+
+
+
+More math is available in Python's [math module](https://docs.python.org/3/library/math.html).
+
+### Getting user input
+
+We can use python's `input()` instruction to request information from the user:
+
+```python
+user_input = input("I demand input: ")
+```
+
+In the code above, whatever the user types in gets stored in `user_input`. The string `"I demand input: "` is used as the prompt for input.
+
+### Working with strings
+
+Find more things you can do to strings here: [https://docs.python.org/3/library/stdtypes.html#string-methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
+### Challenges
+
+- (1) Write a program that take a user's name and age in as input, and prints the year they were born.
+- (2) Adjust program so that user's name is printed in ALL CAPS (hint: checkout Python's string documentation)
+- (3) What are some special characters that aren't obvious in how we can include them in a python string (e.g., so we can print them)? Think about things you use all the time when writing an essay or an email. E.g., what might you start a paragraph with?
+
+<!-- ### Example code -->
+
+<!-- {% include linkinclude.html file='basics.py' %} -->
 
 ## Python - conditionals and loops
 
