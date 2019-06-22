@@ -15,6 +15,9 @@
   - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
 - [Python - data structures](#python---data-structures)
+  - [Lists](#lists)
+  - [Dictionaries](#dictionaries)
+  - [Python - data structures - example code](#python---data-structures---example-code)
 
 <!-- /TOC -->
 
@@ -259,3 +262,163 @@ for i in range(13):
 {% include codeinclude.html file='rock_paper_scissors.py' %}
 
 ## Python - data structures
+
+### Lists
+
+We can compose simple data types (e.g., strings, integers, etc) into more complex data structures.
+
+A list, for example, lets us store a sequence of values (often referred to as elements):
+
+```python
+pet_names = ['Yogi', 'Boomer', 'Gunther', 'Banana']
+```
+
+You can access and reassign individual positions (or indexes) in a list using square brackets `[]`. NOTE: lists in python always start at 0 (e.g., 'Yogi' in our example is at position 0 of the `pet_names` list).
+
+```python
+print(pet_names[0]) # will print Yogi
+print(pet_names[1]) # will print Boomer
+print(pet_names[3]) # will print Banana
+
+# We can access a list with negative numbers, too...
+print(pet_names[-1]) # will print Banana
+```
+
+**CHALLENGE QUESTION**: how might we get the second-to-last value in the list?
+
+We can modify the value of something in the list:
+
+```python
+pet_names[1] = "BOOMER"
+print(pet_names[1]) # will print BOOMER
+```
+
+A word of warning: if you try to index into a position beyond the size of the list, python will yell at you: `IndexError: list index out of range`.
+
+```python
+pet_names[4] # will give you an error
+pet_names[100] # will give you an error
+pet_names[-4] # will give you an error
+```
+
+We can loop over a list using a for loop:
+
+```python
+for name in pet_names:
+    print(name)
+```
+
+It's often useful to check to see if a particular value is in the list:
+
+```python
+print("'Alex' in the list? " + str('Alex' in pet_names))         # no
+print("'Yogi' in the list? " + str('Yogi' in pet_names))         # yes
+print("'BANANA' in the list? " + str('BANANA' in pet_names))     # nope - remember, python is case sensitive
+print("'gunther' in the list? " + str('gunther' in pet_names))   # nope
+```
+
+We can append things to the end of lists:
+
+```python
+pet_names.append("Doggo")
+# We can print the entire list
+print(pet_names)
+```
+
+We can insert things into the list at a particular position:
+
+```python
+pet_names.insert(1, "Fishy")
+print(pet_names)
+```
+
+We can remove a particular value from the list:
+
+```python
+pet_names.remove("Gunther")
+print(pet_names)
+```
+
+We can remove something from the list by position:
+
+```python
+pet_names.pop(1)
+print(pet_names)
+```
+
+Wait, how long is our list? We can use the `len()` instruction to check:
+
+```python
+list_len = len(pet_names)
+print(list_len)
+# We could also:
+print(len(list_len))
+```
+
+We can sort a list:
+
+```python
+sorted_pet_names = sorted(pet_names)
+print(sorted_pet_names)
+
+# What if we want reverse order?
+reverse_sorted_pet_names = sorted(pet_names, reverse=True)
+print(reverse_sorted_pet_names)
+```
+
+We can remove everything from a list:
+```python
+pet_names.clear()
+print(pet_names)
+```
+
+For more things you can do with lists see: [https://docs.python.org/3/tutorial/datastructures.html#more-on-lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
+
+**CHALLENGES**
+
+- Make a list of 10 numbers (of your choosing)
+  - calculate the average
+  - get the difference between the max and the minimum value
+
+### Dictionaries
+
+We won't spend much time on dictionaries for the moment, but we'll point them out because they're super useful.
+
+A dictionary (often refered to as a `dict`) in Python is a set of key-value pairs.
+
+In Python, dictionaries are denoted using `{}`.
+
+```python
+info_dict = {"name": "Dumbledore", "age": 115}
+```
+
+In the above example, we created a dictionary with 3 entries with the following keys: `"name"`, `"age"`.
+
+We access the values in a dictionary using their keys:
+
+```python
+print(info_dict["name"])                  # Dumbledore
+print(info_dict["age"])                   # 115
+```
+
+We can update the value associated with a particular key:
+
+```python
+info_dict["name"] = "Harry Potter"
+print(info_dict["name"])            # Harry Potter
+```
+
+We can add entries to a dictionary:
+
+```python
+info_dict["muggle"] = False
+print(info_dict)
+```
+
+**CHALLENGE**: Make a dictionary where at least one entry has a list for a value and another entry has a dictionary for a value.
+
+For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries](ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries)
+
+### Python - data structures - example code
+
+{% include linkinclude.html file='data_structures.py' %}
