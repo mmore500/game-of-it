@@ -8,11 +8,11 @@ import pygame
 
 pygame.init()
 
-FPS = 30                        # Frames per second
+FPS = 30 # Frames per second
 fps_clock = pygame.time.Clock() # Helps us make sure our programs run at a certain maximum FPS
                                 # It'll put small pauses each iteration through our game loop
 
-# Setup the pygame window
+# Setup the window
 width = 400
 height = 300
 display_surface = pygame.display.set_mode([width, height])
@@ -22,6 +22,7 @@ cat_img = pygame.image.load('media/cat.png')
 cat_x = 10
 cat_y = 10
 
+direction = 'left'
 while True: # Enter the game loop
     display_surface.fill([255, 255, 255])
 
@@ -31,6 +32,22 @@ while True: # Enter the game loop
 
     # CHALLENGE: have the cat infinitely pace back and forth (move to the right
     #   until it reaches an edge, then move left, etc)
+
+    # -- Challenge code --
+    # if direction == 'right':
+    #     # Move to the right
+    #     cat_x += 5
+    #     if cat_x >= 280: # Need to change directions
+    #         direction = 'left'
+    #         # cat_img = pygame.transform.flip(cat_img, True, False)
+
+
+    # elif direction == 'left':
+    #     # Move to the left
+    #     cat_x -= 5
+    #     if cat_x <= 20: # Need to change directions
+    #         direction = 'right'
+            # cat_img = pygame.transform.flip(cat_img, True, False)
 
     # Question: why does the back and forth look the way it does?
     # Follow-up: can you make the cat go in a square loop?
