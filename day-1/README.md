@@ -17,7 +17,9 @@
 - [Python - data structures](#python---data-structures)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
-  - [Python - data structures - example code](#python---data-structures---example-code)
+  - [Data structures - example games](#data-structures---example-games)
+    - [World guessing game](#world-guessing-game)
+    - [Simon Says](#simon-says)
 
 <!-- /TOC -->
 
@@ -257,7 +259,7 @@ for i in range(13):
 
 
 
-{% include codeinclude.html file='simon_says.py' %}
+{% include codeinclude.html file='num_guess_game.py' %}
 
 {% include codeinclude.html file='rock_paper_scissors.py' %}
 
@@ -419,6 +421,50 @@ print(info_dict)
 
 For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries](ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
-### Python - data structures - example code
-
 {% include linkinclude.html file='data_structures.py' %}
+
+### Data structures - example games
+
+#### World guessing game
+
+In the word guessing game, the programmer has selected a secret word, and the player has 10 rounds to guess reveal what the secret is by guessing one letter at a time.
+
+#### Simon Says
+
+Game description:
+
+Simon says is played in rounds. Starting the game with and empty list, the program selects a random letter each round. The program prints the chosen letter for the player to see. The player must then input each letter that the program previously output. Any deviation from the correct sequence results in a loss. The player's goal is to achieve as high a score as possible.
+
+
+Example gameplay:
+
+```
+Simon says:  B
+> B
+Simon says: C
+> B
+> C
+Simon says: A
+> B
+> C
+> A
+Simon says: C
+> B
+> C
+> A
+> C
+Simon says: D
+> C
+WRONG! Final score = 4
+```
+
+In the above example, the program output all of the 'simon says' lines (using `print("Simon says:", letter)`), and player input (using `input(">")`) is given after the '>' prompt. When the player fails to repeat the full sequence, the player loses, and the game reports their final score.
+
+After you have a working game please put up a green sticky
+Then add the following optional features:
+
+- Ensure that the user is only allowed to select a valid option (prompting them again if necessary)
+- Change the elements that are being tested to (‘Rock’, ‘Paper’, or ‘Scissors’)
+- For each input, let the player know how many more letters they need to provide for the round.
+- Be sure to partition your code into functions with clear names and documentation
+- If you have implemented all the above features, get up and help your neighbors who don’t have a green sticky.
