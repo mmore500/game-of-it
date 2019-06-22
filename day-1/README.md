@@ -11,7 +11,8 @@
   - [Python can be used as a glorified calculator](#python-can-be-used-as-a-glorified-calculator)
   - [Getting user input](#getting-user-input)
   - [Working with strings](#working-with-strings)
-  - [Challenges](#challenges)
+  - [Basics - Challenges](#basics---challenges)
+  - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
 - [Python - data structures](#python---data-structures)
 
@@ -159,15 +160,15 @@ In the code above, whatever the user types in gets stored in `user_input`. The s
 
 Find more things you can do to strings here: [https://docs.python.org/3/library/stdtypes.html#string-methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
-### Challenges
+### Basics - Challenges
 
 - (1) Write a program that take a user's name and age in as input, and prints the year they were born.
 - (2) Adjust program so that user's name is printed in ALL CAPS (hint: checkout Python's string documentation)
 - (3) What are some special characters that aren't obvious in how we can include them in a python string (e.g., so we can print them)? Think about things you use all the time when writing an essay or an email. E.g., what might you start a paragraph with?
 
-<!-- ### Example code -->
+### Basics - Example code
 
-<!-- {% include linkinclude.html file='basics.py' %} -->
+{% include linkinclude.html file='basics.py' %}
 
 ## Python - conditionals and loops
 
