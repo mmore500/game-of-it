@@ -111,9 +111,95 @@ print(last_name)
 print(age)
 ```
 
-
+{% include linkinclude.html file='basics.py' %}
 
 
 ## Python - conditionals and loops
+
+Conditional statements (syntax: `if`) allow your code to make decisions based on input.
+Code inside an `if` block is only executed if the test next to the `if` evaluates to `True`.
+
+```python
+print("duu du duu du dududu...")
+print("duu du duu du dududu...")
+if input("Is there something strange in your neighborhood? ") == "yes":
+  print("who ya gonna call??? ghostbusters!!")
+```
+
+The syntax `elif` (else if) allows you to perform a subsequent test if the first `if` doesn't evaluate to `True`.
+The syntax `else` is a catch-all that executes at the end of a series of `if` and `elif` tests if nothing else has triggered.
+
+```python
+print("duu du duu du dududu...")
+print("duu du duu du dududu...")
+if input("Is there something strange in your neighborhood? ") == "yes":
+  print("who ya gonna call??? ghostbusters!!")
+elif input("An invisible man... sleepin in your bed? ") == "yes":
+  print("who ya gonna call??? ghostbusters!!")
+elif input("Mm.. if you've had a dose... of a  freaky ghost baby? ") == "yes":
+  print("who ya gonna call??? ghostbusters!!")
+else:
+  print("you better NOT call... ghostbusters!")
+```
+
+According to urban legend, saying "bloody mary" 13x into a mirror will summon a scary ghost.
+Here's one way of doing that.
+
+```python
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+print("Bloody Mary!")
+```
+
+Pretty annoying, right?
+The syntax `while` repeats a block of code until the test next to it evaluates `False`.
+
+```python
+while input("Keep going?") == "yes":
+  print("Bloody Mary!")
+```
+
+We can make Python count to 13 for us.
+The variable `i` increases by one until it reaches 13.
+
+```python
+i = 0
+while i < 13:
+  print("Bloody Mary!", i)
+  i = i + 1
+```
+
+Sometimes, we want to run a code block once for each element in a collection.
+We could print `"Bloody Mary!"` once for each number 0 through 12.
+
+```python
+for i in (0,1,2,3,4,5,6,7,8,9,10,11,12):
+  print("Bloody Mary!", i)
+```
+
+Python gives us a nice way to count with a for loop.
+The `range(n)` function makes a collection of integers from 0 through `(n-1)`.
+(This way, when code inside `for i in range(n):` runs `n` times.)
+
+```python
+for i in range(13):
+  print("Bloody Mary!", i)
+```
+
+
+
+{% include codeinclude.html file='simon_says.py' %}
+
+{% include codeinclude.html file='rock_paper_scissors.py' %}
 
 ## Python - data structures

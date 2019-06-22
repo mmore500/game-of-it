@@ -177,7 +177,3 @@ while True:
                 elif menu_screen_buttons[cur_menu_btn_id] == 'quit':
                     pygame.quit()
                     sys.exit()
-
-    # Update the screen
-    pygame.display.update()
-    clock.tick(FPS)
