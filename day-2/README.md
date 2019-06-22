@@ -29,6 +29,8 @@ Moving on from drawing static images to simple animations isn't too difficult in
 
 ## Pygame - Collisions
 
+{% include codeinclude.html file='collision.py' %}
+
 ## Example Code
 
 {% include codeinclude.html file='bullets.py' %}
@@ -36,5 +38,3 @@ Moving on from drawing static images to simple animations isn't too difficult in
 {% include codeinclude.html file='bullets_game_v0.py' %}
 
 {% include codeinclude.html file='bullets_game_v1.py' %}
-
-{% include codeinclude.html file='collision.py' %}
