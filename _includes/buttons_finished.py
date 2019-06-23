@@ -44,12 +44,25 @@ while True:
 
     # CHALLENGE: if mouse if hovering over the button, make the color darker/outline it
     # We'll need to know the mouse position
+    mouse_pos = pygame.mouse.get_pos()
+    hover = False
+    if rect_button.collidepoint(mouse_pos):
+        # Mouse is over button
+        print("Over RECT button!")
+        rect_button_color = DARK_RED
+        hover = True
+    else:
+        # Mouse not on button
+        rect_button_color = RED
 
     ############################################################################
     # Draw the rectangle button
     pygame.draw.rect(screen, rect_button_color, rect_button)
     rect_clicks_surf = font.render(str(rect_clicks), True, BLACK)
     screen.blit(rect_clicks_surf, [rect_button.topright[0]+10, rect_button.topright[1]-5])
+    # if we're hovering over the rectangle button,
+    if hover:
+        pygame.draw.rect(screen, BLACK, rect_button, 4)
     ############################################################################
 
     ############################################################################
