@@ -9,7 +9,7 @@ Note: our introduction into pygame is taken/adapted from: [https://inventwithpyt
 - [Pygame - Controls](#pygame---controls)
 - [Pygame - Text](#pygame---text)
 - [Pygame - Collisions](#pygame---collisions)
-- [Example Code](#example-code)
+- [Putting it all together](#putting-it-all-together)
 
 <!-- /TOC -->
 
@@ -31,10 +31,12 @@ Moving on from drawing static images to simple animations isn't too difficult in
 
 {% include codeinclude.html file='collision.py' %}
 
-## Example Code
+## Putting it all together
+
+In this example, we're going to have pygame shoot projectiles from the mouse when the mouse is clicked:
 
 {% include codeinclude.html file='bullets.py' %}
 
-{% include codeinclude.html file='bullets_game_v0.py' %}
+<!-- {% include codeinclude.html file='bullets_game_v0.py' %} -->
 
-{% include codeinclude.html file='bullets_game_v1.py' %}
+<!-- {% include codeinclude.html file='bullets_game_v1.py' %} -->
