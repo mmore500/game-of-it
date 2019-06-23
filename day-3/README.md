@@ -8,7 +8,13 @@ Buttons in pygame are very simple: they're rectangles that we draw on the screen
 
 {% include codeinclude.html file='buttons.py' %}
 
-<!-- {% include codeinclude.html file='menu.py' %} -->
+Menus are just several buttons strung together. We can make a menu screen by
+having multiple game modes. In the example below, we have two game modes:
+(1) a title screen mode and (2) a menu screen mode. In the menu screen, the
+player uses the arrow keys to navigate (we could have used the mouse here
+instead), and presses enter to make a selection.
+
+{% include codeinclude.html file='menu.py' %}
 
 ## LUNCH SPECIAL TASK
 
