@@ -6,7 +6,7 @@
 
 Buttons in pygame are very simple: they're rectangles that we draw on the screen, and we detect button presses by detecting collisions between the mouse pointer and the button rectangle when the player clicks.
 
-<!-- {% include codeinclude.html file='buttons.py' %} -->
+{% include codeinclude.html file='buttons.py' %}
 
 <!-- {% include codeinclude.html file='menu.py' %} -->
 
