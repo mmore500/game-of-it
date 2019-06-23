@@ -14,6 +14,8 @@
   - [Basics - Challenges](#basics---challenges)
   - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
+  - [Number guessing game](#number-guessing-game)
+  - [Rock paper scissors](#rock-paper-scissors)
 - [Python - data structures](#python---data-structures)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
@@ -257,11 +259,15 @@ for i in range(13):
   print("Bloody Mary!", i)
 ```
 
-
+### Number guessing game
 
 {% include codeinclude.html file='num_guess_game.py' %}
 
-{% include codeinclude.html file='rock_paper_scissors.py' %}
+### Rock paper scissors
+
+Implement a game of rock-paper-scissors. Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
+
+<!-- {% include codeinclude.html file='rock_paper_scissors.py' %} -->
 
 ## Python - data structures
 
