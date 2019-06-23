@@ -37,6 +37,10 @@ In this example, we're going to have pygame shoot projectiles from the mouse whe
 
 {% include codeinclude.html file='bullets.py' %}
 
+Can we adjust the program to have a character rectangle that the player moves around with arrow keys, and when the player presses the spacebar, it fires projectiles (instead of the mouse)?
+
 <!-- {% include codeinclude.html file='bullets_game_v0.py' %} -->
+
+If you did that, can you use WASD to change the direction that the projectiles are shot from the character's rectangle? (e.g., 'w' points projectiles upward, 'd' to the right, etc)
 
 <!-- {% include codeinclude.html file='bullets_game_v1.py' %} -->
