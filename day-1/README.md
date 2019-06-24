@@ -297,17 +297,19 @@ while i < 13:
 
 ### `for` and `range`
 
-Programmers want to execute a code block `n` times so often that Python gives us a way to do just that: a `for` loop coupled with the function `range(n)`.
+Programmers want to execute a code block `n` times so often that Python gives us a way to do just that: a `for` loop coupled with the function `range(0,n)`.
 Like so,
 
 ```python
-for i in range(13):
+for i in range(0,13):
   print("Bloody Mary!", i)
 ```
 
 Conceptually, `for` iterates over each element `in` a collection --- it puts each element in the collection one at a time into the variable `i`.
-The function `range` creates a collection with the numbers `0` through `n-1`.
+The function `range(0,n-1)` creates a collection with the numbers `0` through `n-1`.
 (This way, when code inside `for i in range(n):` runs `n` times.)
+If we wanted the numbers 1 through 13 instead of 0 through twelve, we would write `range(1,13)`. 
+
 
 **Comprehension Question:**
 How many times will "Boo!" get printed?
