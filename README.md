@@ -2,6 +2,12 @@
 
 Find a schedule for the Making a Game of IT programming camp [here](https://www.egr.msu.edu/future-engineer/sites/default/files/content/mgit_2019_0.pdf).
 
+Some generation information:
+
+- Computer Login:
+  - Username: SpartyGame
+  - Password: Sparty1855Game
+
 ## Camping
 
 - [Day 1 (Monday) - Introduction to Python](./day-1/)
