@@ -336,7 +336,6 @@ Each time we guess, Python will tell us if our guess was too low or too high.
 **Extra Challenge:**
 Can you write a program that lets two players play Rock, Paper, Scissors against eachother?
 Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
-<!-- {% include codeinclude.html file='rock_paper_scissors.py' %} -->
 
 ## Python - data structures
 
