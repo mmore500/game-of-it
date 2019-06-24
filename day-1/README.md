@@ -14,8 +14,6 @@
   - [Basics - Challenges](#basics---challenges)
   - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
-  - [Number guessing game](#number-guessing-game)
-  - [Rock paper scissors](#rock-paper-scissors)
 - [Python - data structures](#python---data-structures)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
@@ -179,8 +177,40 @@ Find more things you can do to strings here: [https://docs.python.org/3/library/
 
 ## Python - conditionals and loops
 
+### Boolean Operators
+
+The operator `==` will tell you if two things are equal.
+Note that one equal sign `=` means "assignment" and two equals signs `==` means "test equal."
+If `x` and `y` are equal, `x == y` will turn into `True`.
+If `x` and `y` are not equal, `x == y` will turn into `False`.
+
+For example,
+```
+print(11 == 11)
+print("hello" == "hello")
+```
+
+`<` will tell you if the left thing is smaller than the right thing.
+
+`>` will tell you if the left thing is bigger than the right thing.
+
+`<=` and `>=` will do exactly what you expect.
+
+**Challenge:**
+Which of the following three are equal to `1111`?
+* `10 * 111`,
+* `57 * 33`, or
+* `11 * 101`
+
+Which is bigger, `123 * 45` or `8765`?
+
+Can test whether a user said "yes" using `input`?
+
+### `if`, `elif`, and `else`
+
 Conditional statements (syntax: `if`) allow your code to make decisions based on input.
 Code inside an `if` block is only executed if the test next to the `if` evaluates to `True`.
+*Note how whitespace at the beginning of a line determines which block a line of code is in.*
 
 ```python
 print("duu du duu du dududu...")
@@ -204,6 +234,15 @@ elif input("Mm.. if you've had a dose... of a  freaky ghost baby? ") == "yes":
 else:
   print("you better NOT call... ghostbusters!")
 ```
+
+**Challenge:**
+Ghostbusters is a PG-13 movie.
+Ask the user for their age and then tell them if they're ready to see Ghostbusters.
+If they're younger than thirteen, tell them no!
+Else, if they're older than 113, tell them that they're the oldest person in the world.
+Otherwise, tell them they're cleared to watch Ghostbusters.
+
+### `while` and `break`
 
 According to urban legend, saying "bloody mary" 13x into a mirror will summon a scary ghost.
 Here's one way of doing that.
@@ -242,31 +281,61 @@ while i < 13:
   i = i + 1
 ```
 
-Sometimes, we want to run a code block once for each element in a collection.
-We could print `"Bloody Mary!"` once for each number 0 through 12.
+What if we want a way to back out of summoning the scary mirror ghost?
+Python's `break` statement allows the programmer to end a loop.
+Let's put a `break` statement inside an `if` to stop the summoning if we get scared.
 
 ```python
-for i in (0,1,2,3,4,5,6,7,8,9,10,11,12):
+i = 0
+while i < 13:
   print("Bloody Mary!", i)
+  i = i + 1
+  if input("Scared yet??? ") == "yes":
+    print("ok let's stop")
+    break
 ```
 
-Python gives us a nice way to count with a for loop.
-The `range(n)` function makes a collection of integers from 0 through `(n-1)`.
-(This way, when code inside `for i in range(n):` runs `n` times.)
+### `for` and `range`
+
+Programmers want to execute a code block `n` times so often that Python gives us a way to do just that: a `for` loop coupled with the function `range(n)`.
+Like so,
 
 ```python
 for i in range(13):
   print("Bloody Mary!", i)
 ```
 
-### Number guessing game
+Conceptually, `for` iterates over each element `in` a collection --- it puts each element in the collection one at a time into the variable `i`.
+The function `range` creates a collection with the numbers `0` through `n-1`.
+(This way, when code inside `for i in range(n):` runs `n` times.)
+
+**Comprehension Question:**
+How many times will "Boo!" get printed?
+
+```python
+for i in range(3):
+  for i in range(3):
+    print("Boo!")
+```
+
+**Challenge:**
+There's one ghost in the first room.
+There's two ghosts in the second room.
+There's three ghosts in the third room... and so on and so forth.
+There's thirteen rooms in this haunted 80's penthouse.
+Can you use math and a loop to calculate how many ghosts we're going to run into total?
+
+### Number Guessing Game
+
+Let's put it all together to make a number guessing game.
+Python will randomly choose a number and then we'll make successive guesses until we get it.
+Each time we guess, Python will tell us if our guess was too low or too high.
 
 {% include codeinclude.html file='num_guess_game.py' %}
 
-### Rock paper scissors
-
-Implement a game of rock-paper-scissors. Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
-
+**Extra Challenge:**
+Can you write a program that lets two players play Rock, Paper, Scissors against eachother?
+Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
 <!-- {% include codeinclude.html file='rock_paper_scissors.py' %} -->
 
 ## Python - data structures
