@@ -45,6 +45,7 @@ text_y = height / 2
 # CHALLENGE: add some more text to the screen, try rendering a few different fonts
 #            at once
 
+# rot_degrees = 1
 while True:
     # fill the background
     display_surface.fill(display_bg_color)
@@ -53,6 +54,9 @@ while True:
 
     # blit the text onto the screen
     display_surface.blit(text_surface, [text_x, text_y])
+    # text_surface = font.render('Hello World!', True, [0,0,0], [0,255,0])
+    # text_surface = pygame.transform.rotate(text_surface, rot_degrees)
+    # rot_degrees += 1
 
     # Events!
     for event in pygame.event.get():

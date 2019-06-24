@@ -53,9 +53,28 @@ while True:
     # - We don't need to track projectiles that go offscreen anymore (in fact, we
     #   really shouldn't track those), so we'll keep track of what projectiles are
     #   still on screen with on_screen_bullets
-
+    on_screen_bullets = []
     for bullet in bullets:
-        pass
+        bullet.left += bullet_velocity_x        # Apply movement
+        pygame.draw.rect(screen, BLACK, bullet) # Draw the bullet
+
+        # Does this bullet collide with any enemies?
+        alive_enemies = []                      # We'll use this to track which
+                                                # enemies are still alive after handling this bullet
+        for enemy in enemies:
+            if bullet.colliderect(enemy):
+                # If bullet collides, make some noise, and don't add to alive enemies list
+                print(random.choice(["AAAAHHHH","GRUNT", "UUUGGG", "SPLAT", "POP"]))
+                continue
+            alive_enemies.append(enemy) # Enemy escaped the projectile
+        enemies = alive_enemies # Update enemies list
+
+        # Is this projectile still on screen?
+        if bullet.left <= screen_width:
+            on_screen_bullets.append(bullet)
+
+    # Update list of projectiles with only those that are still on screen
+    bullets = on_screen_bullets
 
     # Event loop
     for event in pygame.event.get():
@@ -64,7 +83,10 @@ while True:
             sys.exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             # Fire bullet when player presses mouse button
-            print("PEW PEW")
+            pos = pygame.mouse.get_pos()
+            bullet = pygame.Rect(pos[0], pos[1], bullet_width, bullet_height)
+            bullets.append(bullet)
+            print(len(bullets))
 
     pygame.display.update() # update the screen
     clock.tick(FPS)

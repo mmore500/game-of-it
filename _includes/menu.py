@@ -6,45 +6,46 @@ import sys
 import random
 import pygame
 
-pygame.init()
-
-screen_mode = 'title'   # Modes: title, menu
+# Constants
 FPS = 60
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 800
-BTN_PADDING = 10
-BTN_MARGIN = 10
+BTN_PADDING = 10    # How much padding are we going to put around a button?
+BTN_MARGIN = 10     # How much space do we want around button text?
 
-clock = pygame.time.Clock()
-screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
-menu_font = pygame.font.SysFont('impact', 32)
-
+# Colors
 WHITE = [255, 255, 255]
 GREY = [175, 175, 175]
 BLACK = [0, 0, 5]
 YELLOW = [255, 229, 153]
 DARKER_YELLOW = [255, 217, 102]
 
+pygame.init() # As always, initialize pygame
+
+screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
+clock = pygame.time.Clock()
+menu_font = pygame.font.SysFont('impact', 32)   # Here's our button font
+
+screen_mode = 'title'   # Modes: title, menu
+
 menu_btn_color = YELLOW
 menu_btn_hover_color = DARKER_YELLOW
-
-
 
 ################################################################################
 # Title screen components
 ################################################################################
 title_screen_bg_color = BLACK
-# Title text
+# === Title text ===
 title_font = pygame.font.SysFont('impact', 128)
 title_surface = title_font.render('THE MENU GAME', True, WHITE)
 title_rect = title_surface.get_rect()
 title_rect.x = (SCREEN_WIDTH / 2) - (title_rect.width / 2) # Put rect in middle of screen (perfectly in middle x)
 title_rect.y = (SCREEN_HEIGHT / 2) - (title_rect.height)   # Put rect in middle of the screen (sitting on top of horizontal midline)
 
-# Open menu button
+# === Open menu button ===
 menu_btn_txt_surface = menu_font.render('open menu', True, BLACK)
 
-# setup menu button background
+# setup open menu button background
 menu_btn_bg_rect = menu_btn_txt_surface.get_rect()
 menu_btn_bg_rect.width += 2 * BTN_MARGIN  # Add some margins to the button
 menu_btn_bg_rect.height += 2 * BTN_MARGIN # Add margin to the button
@@ -61,10 +62,11 @@ menu_btn_txt_rect.y = title_rect.midbottom[1] + BTN_PADDING + BTN_MARGIN
 ################################################################################
 menu_screen_bg_color = GREY
 
-menu_screen_buttons = ['resume', 'random', 'quit']
-cur_menu_btn_id = 0
+menu_screen_buttons = ['resume', 'random', 'quit'] # Available buttons
+cur_menu_btn_id = 0                                # What button are we currently on?
 btn_color = YELLOW
 
+# === Resume button ===
 # Render resume btn text onto surface
 resume_btn_txt_surface = menu_font.render('Resume', True, BLACK)
 # Setup resume button background
@@ -78,6 +80,7 @@ resume_btn_txt_rect = resume_btn_txt_surface.get_rect()
 resume_btn_txt_rect.x = resume_btn_bg_rect.x + BTN_MARGIN
 resume_btn_txt_rect.y = resume_btn_bg_rect.y + BTN_MARGIN
 
+# === Random button ===
 # Render random btn text onto surface
 random_btn_txt_surface = menu_font.render('???', True, BLACK)
 # Setup random button background
@@ -91,6 +94,7 @@ random_btn_txt_rect = random_btn_txt_surface.get_rect()
 random_btn_txt_rect.x = random_btn_bg_rect.x + BTN_MARGIN
 random_btn_txt_rect.y = random_btn_bg_rect.y + BTN_MARGIN
 
+# === Quit button ===
 # Render quit btn text onto surface
 quit_btn_txt_surface = menu_font.render('Quit', True, BLACK)
 # Setup quit button background
@@ -103,8 +107,9 @@ quit_btn_bg_rect.y = random_btn_bg_rect.y + (resume_btn_bg_rect.height + BTN_PAD
 quit_btn_txt_rect = quit_btn_txt_surface.get_rect()
 quit_btn_txt_rect.x = quit_btn_bg_rect.x + BTN_MARGIN
 quit_btn_txt_rect.y = quit_btn_bg_rect.y + BTN_MARGIN
+################################################################################
 
-
+# Game loop
 while True:
     # We need to show different things depending on whether or not we're in 'title'
     # or 'menu' mode
@@ -117,6 +122,7 @@ while True:
         # Draw the menu button, first: the text
         pygame.draw.rect(screen, menu_btn_color, menu_btn_bg_rect)
         screen.blit(menu_btn_txt_surface, menu_btn_txt_rect)
+
     elif screen_mode == 'menu':
         # === MENU SCREEN MODE ===
         screen.fill(menu_screen_bg_color)
@@ -145,6 +151,7 @@ while True:
         screen.blit(resume_btn_txt_surface, resume_btn_txt_rect)
         screen.blit(random_btn_txt_surface, random_btn_txt_rect)
         screen.blit(quit_btn_txt_surface, quit_btn_txt_rect)
+
     else:
         # ==== ???? MODE ====
         print("AAAH UNRECOGNIZED SCREEN MODE! Exiting")
@@ -155,25 +162,33 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        # TITLE MODE EVENTS
+
+        # ===== TITLE MODE EVENTS =====
         if screen_mode == 'title' and event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             if menu_btn_bg_rect.collidepoint(mouse_pos):
                 screen_mode = 'menu'
                 cur_menu_btn_id = 0
-        # MENU MODE EVENTS
+
+        # ===== MENU MODE EVENTS =====
         if screen_mode == 'menu' and event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DOWN:
+                # player presses down arrow
                 cur_menu_btn_id = (cur_menu_btn_id + 1) % len(menu_screen_buttons)
             if event.key == pygame.K_UP:
+                # player presses up arrow
                 cur_menu_btn_id = (cur_menu_btn_id - 1) % len(menu_screen_buttons)
             if event.key == pygame.K_RETURN:
+                # Player presses return (selects current option)
                 if menu_screen_buttons[cur_menu_btn_id] == 'resume':
+                    # if on resume button, go back to title screen
                     screen_mode = 'title'
                 elif menu_screen_buttons[cur_menu_btn_id] == 'random':
+                    # if on random ('???') button, randomize background color
                     menu_screen_bg_color = [random.randint(0, 255),
                                             random.randint(0, 255),
                                             random.randint(0, 255)]
                 elif menu_screen_buttons[cur_menu_btn_id] == 'quit':
+                    # if on quit button, quit the game
                     pygame.quit()
                     sys.exit()
