@@ -27,7 +27,7 @@ Why python?
 
 ## Python - the very basics
 
-The code for this section is in [basics.py](./basics.py).
+The code for this section is in [basics.py](._includes/basics.py).
 
 ### Comments in Python
 
