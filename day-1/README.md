@@ -15,13 +15,17 @@
   - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
   - [Number guessing game](#number-guessing-game)
+    - [Number guessing game solution](#number-guessing-game-solution)
   - [Rock paper scissors](#rock-paper-scissors)
+    - [Rock paper scissors solution code](#rock-paper-scissors-solution-code)
 - [Python - data structures](#python---data-structures)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
   - [Data structures - example games](#data-structures---example-games)
     - [World guessing game](#world-guessing-game)
+      - [Word guessing game solution](#word-guessing-game-solution)
     - [Simon Says](#simon-says)
+      - [Simon says solution](#simon-says-solution)
 
 <!-- /TOC -->
 
@@ -149,8 +153,6 @@ a = (1 + 1) * (2 + 2) # = 8
 b = 1 + 1 * 2 + 2     # = 5
 ```
 
-
-
 More math is available in Python's [math module](https://docs.python.org/3/library/math.html).
 
 ### Getting user input
@@ -261,13 +263,17 @@ for i in range(13):
 
 ### Number guessing game
 
+#### Number guessing game solution
+
 {% include codeinclude.html file='num_guess_game.py' %}
 
 ### Rock paper scissors
 
 Implement a game of rock-paper-scissors. Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
 
-<!-- {% include codeinclude.html file='rock_paper_scissors.py' %} -->
+#### Rock paper scissors solution code
+
+{% include codeinclude.html file='rock_paper_scissors.py' %}
 
 ## Python - data structures
 
@@ -293,6 +299,12 @@ print(pet_names[-1]) # will print Banana
 ```
 
 **CHALLENGE QUESTION**: how might we get the second-to-last value in the list?
+
+Answer:
+
+```python
+print(pet_names[-2])
+```
 
 We can modify the value of something in the list:
 
@@ -388,6 +400,52 @@ For more things you can do with lists see: [https://docs.python.org/3/tutorial/d
   - calculate the average
   - get the difference between the max and the minimum value
 
+Taking the average (using a for loop):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+total = 0
+for num in numbers:
+  total = total + num
+print(total / len(numbers)) # This will print out the average
+```
+
+Taking the average (using python's `sum` instruction):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+total = sum(numbers)
+print(total / len(numbers))
+```
+
+Getting the minimum and maximum value (using a for loop):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+min_num = numbers[0] # We'll assume the first number in the list is the minimum number
+max_num = numbers[0] # We'll assume the first number in the list is the maximum number
+for num in numbers:
+  if num < min_num: # If the current number is less than the smallest number we've found so far
+    min_num = num   #   - update minimum number
+  if num > max_num: # If the current number is larger than the largest number we've found so far
+    max_num = num   #   - update the maximum number
+
+print("Minimum number is: " + str(min_num))
+print("Maximum number is: " + str(max_num))
+print("Min - max is: " + str(min_num - max_num))
+```
+
+Getting the minimum and maximum value (using python's `min` and `max` instructions):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+min_num = min(numbers)
+max_num = max(numbers)
+print("Minimum number is: " + str(min_num))
+print("Maximum number is: " + str(max_num))
+print("Min - max is: " + str(min_num - max_num))
+```
+
 ### Dictionaries
 
 We won't spend much time on dictionaries for the moment, but we'll point them out because they're super useful.
@@ -427,6 +485,8 @@ print(info_dict)
 
 For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries](ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
+Example code:
+
 {% include linkinclude.html file='data_structures.py' %}
 
 ### Data structures - example games
@@ -434,6 +494,10 @@ For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html
 #### World guessing game
 
 In the word guessing game, the programmer has selected a secret word, and the player has 10 rounds to guess reveal what the secret is by guessing one letter at a time.
+
+##### Word guessing game solution
+
+{% include codeinclude.html file='word_guess_game.py' %}
 
 #### Simon Says
 
@@ -474,3 +538,7 @@ Then add the following optional features:
 - For each input, let the player know how many more letters they need to provide for the round.
 - Be sure to partition your code into functions with clear names and documentation
 - If you have implemented all the above features, get up and help your neighbors who don’t have a green sticky.
+
+##### Simon says solution
+
+{% include codeinclude.html file='simon_says.py' %}
