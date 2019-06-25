@@ -29,7 +29,7 @@ Let's set up game screen.
 
 ```python3
 screen = pygame.display.set_mode([1200, 800])
-pygame.display.set_caption("Alien Invasion")
+pygame.display.set_caption("Game Name")
 ```
 
 Let's define some colors using RGB codes (red, green, blue).
@@ -254,7 +254,7 @@ while True:
 **Challenge:**
 Can you make a game that tests how many total times the user can press the `j` and/or `k` keys in ten seconds?
 Can you make it so that pressing other keys makes you loose points?
-Hint: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop.
+Hint: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop?
 
 **Challenge:**
 Open back up your `catimation.py` file... can you make the user control the movement of the cat image with the `w` (up), `a` (left), `s` (down), and `d` (right) keys?
@@ -287,13 +287,17 @@ while True:
 ```
 
 **Challenge:**
-Can you make a game that tests how far the user can ?
-Can you make it so that pressing other keys makes you loose points?
-* hint 1: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop.
+Can you make a game that tests how far the user can move the mouse in ten seconds?
+You'll want to calculate the distance moved relative to the last mouse position each time through the outer loop and add it to a running sum.
+Can you make it moving the mouse through the center of the screen loses you points?
+Can you draw a rectangle there so the user knows to avoid it?
+* hint 1: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop?
 * hint 2: calculate the distance between two mouse positions `[x_1, y_1]` and `[x_2, y_2]` as `(x_1 - x_2) ** 2 + (y_1 - y_2) ** 2`.
 
 **Challenge:**
 Open back up your `catimation.py` file... can you make the user control the movement of the cat image with the mouse?
+First, just draw the cat at the position of the mouse cursor.
+Then, if you want an extra challenge, have the cat chase the mouse!
 
 ## Pygame - Text
 
