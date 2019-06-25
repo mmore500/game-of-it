@@ -14,12 +14,22 @@
   - [Basics - Challenges](#basics---challenges)
   - [Basics - Example code](#basics---example-code)
 - [Python - conditionals and loops](#python---conditionals-and-loops)
+  - [Boolean Operators](#boolean-operators)
+  - [`if`, `elif`, and `else`](#if-elif-and-else)
+  - [`while` and `break`](#while-and-break)
+  - [`for` and `range`](#for-and-range)
+  - [Number Guessing Game](#number-guessing-game)
+    - [Number guessing game solution](#number-guessing-game-solution)
+  - [Rock paper scissors](#rock-paper-scissors)
+    - [Rock paper scissors solution](#rock-paper-scissors-solution)
 - [Python - data structures](#python---data-structures)
   - [Lists](#lists)
   - [Dictionaries](#dictionaries)
   - [Data structures - example games](#data-structures---example-games)
     - [World guessing game](#world-guessing-game)
+      - [Word guessing game solution](#word-guessing-game-solution)
     - [Simon Says](#simon-says)
+      - [Simon says solution](#simon-says-solution)
 
 <!-- /TOC -->
 
@@ -146,8 +156,6 @@ a = (1 + 1) * (2 + 2) # = 8
 # is different from
 b = 1 + 1 * 2 + 2     # = 5
 ```
-
-
 
 More math is available in Python's [math module](https://docs.python.org/3/library/math.html).
 
@@ -297,24 +305,25 @@ while i < 13:
 
 ### `for` and `range`
 
-Programmers want to execute a code block `n` times so often that Python gives us a way to do just that: a `for` loop coupled with the function `range(n)`.
+Programmers want to execute a code block `n` times so often that Python gives us a way to do just that: a `for` loop coupled with the function `range(0,n)`.
 Like so,
 
 ```python
-for i in range(13):
+for i in range(0,13):
   print("Bloody Mary!", i)
 ```
 
 Conceptually, `for` iterates over each element `in` a collection --- it puts each element in the collection one at a time into the variable `i`.
-The function `range` creates a collection with the numbers `0` through `n-1`.
+The function `range(0,n-1)` creates a collection with the numbers `0` through `n-1`.
 (This way, when code inside `for i in range(n):` runs `n` times.)
+If we wanted the numbers 1 through 13 instead of 0 through twelve, we would write `range(1,13)`.
 
 **Comprehension Question:**
 How many times will "Boo!" get printed?
 
 ```python
 for i in range(3):
-  for i in range(3):
+  for j in range(3):
     print("Boo!")
 ```
 
@@ -331,12 +340,19 @@ Let's put it all together to make a number guessing game.
 Python will randomly choose a number and then we'll make successive guesses until we get it.
 Each time we guess, Python will tell us if our guess was too low or too high.
 
+#### Number guessing game solution
+
 {% include codeinclude.html file='num_guess_game.py' %}
+
+### Rock paper scissors
 
 **Extra Challenge:**
 Can you write a program that lets two players play Rock, Paper, Scissors against eachother?
 Your program should request player 1 and player 2's choices (rock, paper, or scissors), and determine whether player 1 wins, player 2 wins, or the two players tied.
-<!-- {% include codeinclude.html file='rock_paper_scissors.py' %} -->
+
+#### Rock paper scissors solution
+
+{% include codeinclude.html file='rock_paper_scissors.py' %}
 
 ## Python - data structures
 
@@ -362,6 +378,12 @@ print(pet_names[-1]) # will print Banana
 ```
 
 **CHALLENGE QUESTION**: how might we get the second-to-last value in the list?
+
+Answer:
+
+```python
+print(pet_names[-2])
+```
 
 We can modify the value of something in the list:
 
@@ -457,6 +479,52 @@ For more things you can do with lists see: [https://docs.python.org/3/tutorial/d
   - calculate the average
   - get the difference between the max and the minimum value
 
+Taking the average (using a for loop):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+total = 0
+for num in numbers:
+  total = total + num
+print(total / len(numbers)) # This will print out the average
+```
+
+Taking the average (using python's `sum` instruction):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+total = sum(numbers)
+print(total / len(numbers))
+```
+
+Getting the minimum and maximum value (using a for loop):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+min_num = numbers[0] # We'll assume the first number in the list is the minimum number
+max_num = numbers[0] # We'll assume the first number in the list is the maximum number
+for num in numbers:
+  if num < min_num: # If the current number is less than the smallest number we've found so far
+    min_num = num   #   - update minimum number
+  if num > max_num: # If the current number is larger than the largest number we've found so far
+    max_num = num   #   - update the maximum number
+
+print("Minimum number is: " + str(min_num))
+print("Maximum number is: " + str(max_num))
+print("Min - max is: " + str(min_num - max_num))
+```
+
+Getting the minimum and maximum value (using python's `min` and `max` instructions):
+
+```python
+numbers = [0, 1, 4, 8, -1, 100, 75, 20] # An arbitrary list of numbers
+min_num = min(numbers)
+max_num = max(numbers)
+print("Minimum number is: " + str(min_num))
+print("Maximum number is: " + str(max_num))
+print("Min - max is: " + str(min_num - max_num))
+```
+
 ### Dictionaries
 
 We won't spend much time on dictionaries for the moment, but we'll point them out because they're super useful.
@@ -496,6 +564,8 @@ print(info_dict)
 
 For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries](ttps://docs.python.org/3/tutorial/datastructures.html#dictionaries)
 
+Example code:
+
 {% include linkinclude.html file='data_structures.py' %}
 
 ### Data structures - example games
@@ -503,6 +573,10 @@ For more on dictionaries: [ttps://docs.python.org/3/tutorial/datastructures.html
 #### World guessing game
 
 In the word guessing game, the programmer has selected a secret word, and the player has 10 rounds to guess reveal what the secret is by guessing one letter at a time.
+
+##### Word guessing game solution
+
+{% include codeinclude.html file='word_guess_game.py' %}
 
 #### Simon Says
 
@@ -543,3 +617,7 @@ Then add the following optional features:
 - For each input, let the player know how many more letters they need to provide for the round.
 - Be sure to partition your code into functions with clear names and documentation
 - If you have implemented all the above features, get up and help your neighbors who don’t have a green sticky.
+
+##### Simon says solution
+
+{% include codeinclude.html file='simon_says.py' %}
