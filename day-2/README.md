@@ -188,60 +188,112 @@ Moving on from drawing static images to simple animations isn't too difficult in
 So far, we've only used `input` to ask for user input as text.
 Now, we'll use pygame to handle real-time keyboard and mouse input!
 
+### The Big Event
+
+```python3
+import pygame
+import sys
+
+pygame.init()
+
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode([100,100])
+
+while True:
+
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      print("Quit.")
+      pygame.quit()
+      sys.exit()
+    elif event.type == pygame.KEYDOWN:
+      print("Key press.")
+    elif event.type == pygame.KEYUP:
+      print("Key up.")
+    elif event.type == pygame.MOUSEBUTTONDOWN:
+      print("Key down.")
+    else:
+      print("Unknown.")
+
+  clock.tick(60) # 60 frames per second
+```
+
 ### Keyed Up
 
 ```python3
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        print("User asked to quit.")
-    elif event.type == pygame.KEYDOWN:
-        print("User pressed a key.")
-    elif event.type == pygame.KEYUP:
-        print("User let go of a key.")
-    elif event.type == pygame.MOUSEBUTTONDOWN:
-        print("User pressed a mouse button")
+import pygame
+import sys
+
+pygame.init()
+
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode([100,100])
+
+while True:
+
+  for event in pygame.event.get():
+    if event.type == pygame.KEYDOWN:
+      print("Key press.")
+      if event.key == pygame.K_SPACE:
+        print("Space key pressed!")
+      elif event.key == pygame.K_w:
+        print("w key pressed!")
+      elif event.key == pygame.K_a:
+        print("a key pressed!")
+      elif event.key == pygame.K_s:
+        print("s key pressed!")
+      elif event.key == pygame.K_d:
+        print("d key pressed!")
+
+    else:
+      print("Unknown.")
+
+  clock.tick(60) # 60 frames per second
 ```
+
+**Challenge:**
+Can you make a game that tests how many total times the user can press the `j` and/or `k` keys in ten seconds?
+Can you make it so that pressing other keys makes you loose points?
+Hint: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop.
+
+**Challenge:**
+Open back up your `catimation.py` file... can you make the user control the movement of the cat image with the `w` (up), `a` (left), `s` (down), and `d` (right) keys?
 
 ### Mousing Around
 
 ```python3
-for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-    if event.type == pygame.KEYDOWN:
-        # Keydown event!
-        if event.key == pygame.K_SPACE:
-            # Fire a bullet
-            print("pressed space")
-            pos = [0, 0]
-            if character["dir"] == "up":
-                pos = character["rect"].midtop
-                h = bullet_width
-                w = bullet_height
-            elif character["dir"] == "down":
-                pos = character["rect"].midbottom
-                h = bullet_width
-                w = bullet_height
-            elif character["dir"] == "right":
-                pos = character["rect"].midright
-                h = bullet_height
-                w = bullet_width
-            elif character["dir"] == "left":
-                pos = character["rect"].midleft
-                h = bullet_height
-                w = bullet_width
-            bullet = {"rect": pygame.Rect(pos[0], pos[1], w, h), "dir": character["dir"]}
-            bullets.append(bullet)
-        if event.key == pygame.K_w:
-            character["dir"] = "up"
-        if event.key == pygame.K_d:
-            character["dir"] = "right"
-        if event.key == pygame.K_s:
-            character["dir"] = "down"
-        if event.key == pygame.K_a:
-            character["dir"] = "left"
+import pygame
+import sys
+
+pygame.init()
+
+clock = pygame.time.Clock()
+screen = pygame.display.set_mode([100,100])
+
+while True:
+
+  for event in pygame.event.get():
+    if event.type == pygame.MOUSEMOTION:
+      x, y = event.pos
+      print("mouse now at", x, y)
+    elif event.type == pygame.MOUSEBUTTONDOWN:
+      print("Mouse button pressed")
+    elif event.type == pygame.MOUSEBUTTONUP:
+      print("Mouse button released")
+    else:
+      print("Unknown.")
+
+  clock.tick(60) # 60 frames per second
 ```
+
+**Challenge:**
+Can you make a game that tests how far the user can ?
+Can you make it so that pressing other keys makes you loose points?
+* hint 1: the frame rate is 60 frames per second, so how many times do you need to go through the outer loop.
+* hint 2: calculate the distance between two mouse positions `[x_1, y_1]` and `[x_2, y_2]` as `(x_1 - x_2) ** 2 + (y_1 - y_2) ** 2`.
+
+**Challenge:**
+Open back up your `catimation.py` file... can you make the user control the movement of the cat image with the mouse?
 
 ## Pygame - Text
 
