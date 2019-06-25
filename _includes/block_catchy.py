@@ -86,7 +86,7 @@ catcher_start_y = SCREEN_HEIGHT - CATCHER_HEIGHT - 1
 catcher = pygame.Rect([catcher_start_x, catcher_start_y], [CATCHER_WIDTH, CATCHER_HEIGHT])
 falling_objects = []
 
-bomb_img = pygame.image.load('bomb-small.png') # Challenge: use bomb img instead of red squares
+# bomb_img = pygame.image.load('bomb-small.png') # Challenge: use bomb img instead of red squares
 
 health = CATCHER_START_HEALTH
 score = 0

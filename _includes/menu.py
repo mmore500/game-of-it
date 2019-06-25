@@ -25,7 +25,7 @@ pygame.init() # As always, initialize pygame
 screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
 clock = pygame.time.Clock()
 menu_font = pygame.font.SysFont('impact', 32)   # Here's our button font
-
+print("Loaded the font!")
 screen_mode = 'title'   # Modes: title, menu
 
 menu_btn_color = YELLOW
@@ -192,3 +192,5 @@ while True:
                     # if on quit button, quit the game
                     pygame.quit()
                     sys.exit()
+    clock.tick(FPS)
+    pygame.display.update()
