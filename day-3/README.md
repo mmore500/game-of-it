@@ -62,8 +62,118 @@ Brainstorm the _type_ of game you're interested in making.
 
 For example...
 
-## Pygame - Music and sound effects
+## Pygame - Crank It Up to 11
+
+In order for the following code to work, you'll need to download [beep1.ogg](/media/beep1.ogg) and [Tetris.ogg](/media/Tetris.ogg) into the folder containing your Python file.
+
+### Sound Effects
+
+First, let's talk about sound effects: recordings you want to play in response to an event on screen.
+In the following example, we ring a bell in response to key presses.
+
+```python3
+import sys
+import pygame
+
+# Initialize and set up screen.
+pygame.init()
+screen = pygame.display.set_mode([100, 100])
+
+clock = pygame.time.Clock()
+
+beep_effect = pygame.mixer.Sound('beep1.ogg')
+
+# main game loop
+while True:
+
+  # event-handling loop
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      sys.exit()
+    elif event.type == pygame.KEYDOWN:
+      print("bing!")
+      beep_effect.play()
+
+  clock.tick(60)
+
+```
+
+If you want to add your own sound effects, note that PyGame has limited support for different formats: only WAV and OGG files work.
+
+### Background Music
+
+Next, let's cover background music --- something you'd want to be playing for the entire game or throughout a level of the game.
+Unlike the sound effects, this sound is *streamed* instead of loaded all at once --- that means that pygame can handle big and long sound files efficiently here.
+However, you can only have a single piece of background music playing at once.
+
+If we want to just have one piece of background music playing the whole time, it would look like this.
+
+```python3
+import sys
+import pygame
+
+# Initialize and set up screen.
+pygame.init()
+screen = pygame.display.set_mode([100, 100])
+
+clock = pygame.time.Clock()
+
+
+pygame.mixer.music.load('Jeopardy.ogg')
+pygame.mixer.music.play(-1) # how many loops to play? -1 means infinity
+
+# main game loop
+while True:
+
+  # event-handling loop
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      sys.exit()
+
+  clock.tick(60)
+```
+
+If we want to switch between two tracks (maybe on different levels, in different game modes, or between the title and gameplay screens) we use `itertools.cycle` to change out the currently playing track for an alternate on a keypress.
+
+```python3
+import sys
+import pygame
+import itertools
+
+# Initialize and set up screen.
+pygame.init()
+screen = pygame.display.set_mode([100, 100])
+
+clock = pygame.time.Clock()
+
+filenames = itertools.cycle(['Tetris.ogg', 'Jeopardy.ogg'])
+
+# main game loop
+while True:
+
+  # event-handling loop
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit()
+      sys.exit()
+    elif event.type == pygame.KEYDOWN:
+      print("switch tracks")
+      pygame.mixer.music.stop()
+      pygame.mixer.music.load(next(filenames))
+      pygame.mixer.music.play(-1)
+
+  clock.tick(60)
+```
+
+If you want to add your own background music, note that PyGame has limited support for different formats: only MP3 (some), OGG, XM, and MOD files work.
 
 ## Pygame - High-level structure
 
-<!-- {% include codeinclude.html file='block_catchy.py' %} -->
+Let's take a crack at piecing together a complete pygame with a
+1. start screen,
+2. gameplay mode with scorekeeping and lose condition, and
+3. an end screen (with the option for replay).
+
+{% include codeinclude.html file='block_catchy.py' %}
