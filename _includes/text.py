@@ -1,5 +1,5 @@
 '''
-Rending text
+Rendering text
 
 Code copied and adapted from https://inventwithpython.com/pygame/chapter2.html
 '''
