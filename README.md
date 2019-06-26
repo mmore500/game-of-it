@@ -10,6 +10,10 @@ Some generation information:
 
 ## Camping
 
+[Camper-submitted examples here!](./student-examples/)
+
+<hr/>
+
 - [Day 1 (Monday) - Introduction to Python](./day-1/)
   - [Introductions & Getting Started](./day-1/#introductions--getting-started)
     - [Getting Started](./day-1/#getting-started)
