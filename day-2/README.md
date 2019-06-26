@@ -326,7 +326,7 @@ We can detect collisions between rectangles using a `colliderect` instruction. I
 
 In this example, we're going to have pygame shoot projectiles from the mouse when the mouse is clicked:
 
-{% include codeinclude.html file='bullets.py' %}
+{% include codeinclude.html file='bullets_finished.py' %}
 
 ### Keyboard pew pew shooter
 
