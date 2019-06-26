@@ -5,11 +5,20 @@ Note: our introduction into pygame is taken/adapted from: [https://inventwithpyt
 <!-- TOC -->
 
 - [Pygame - Graphics](#pygame---graphics)
+  - [Hello, Rectangle](#hello-rectangle)
+  - [Getting in Shape](#getting-in-shape)
+  - [The Cat's Meow](#the-cats-meow)
 - [Pygame - Animation](#pygame---animation)
 - [Pygame - Controls](#pygame---controls)
+  - [The Big Event](#the-big-event)
+  - [Keyed Up](#keyed-up)
+  - [Mousing Around](#mousing-around)
 - [Pygame - Text](#pygame---text)
 - [Pygame - Collisions](#pygame---collisions)
 - [Putting it all together](#putting-it-all-together)
+  - [Mouse pew pew shooter](#mouse-pew-pew-shooter)
+  - [Keyboard pew pew shooter](#keyboard-pew-pew-shooter)
+  - [Keyboard multi-direction pew pew shooter](#keyboard-multi-direction-pew-pew-shooter)
 
 <!-- /TOC -->
 
@@ -309,14 +318,20 @@ Then, if you want an extra challenge, have the cat chase the mouse!
 
 ## Putting it all together
 
+### Mouse pew pew shooter
+
 In this example, we're going to have pygame shoot projectiles from the mouse when the mouse is clicked:
 
 {% include codeinclude.html file='bullets.py' %}
 
+### Keyboard pew pew shooter
+
 Can we adjust the program to have a character rectangle that the player moves around with arrow keys, and when the player presses the spacebar, it fires projectiles (instead of the mouse)?
 
-<!-- {% include codeinclude.html file='bullets_game_v0.py' %} -->
+{% include codeinclude.html file='bullets_game_v0.py' %}
+
+### Keyboard multi-direction pew pew shooter
 
 If you did that, can you use WASD to change the direction that the projectiles are shot from the character's rectangle? (e.g., 'w' points projectiles upward, 'd' to the right, etc)
 
-<!-- {% include codeinclude.html file='bullets_game_v1.py' %} -->
+{% include codeinclude.html file='bullets_game_v1.py' %}
