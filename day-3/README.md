@@ -1,5 +1,23 @@
 # Making a Game of IT - Day 3 - Pygame
 
+<!-- TOC -->
+
+- [Logistics and announcements](#logistics-and-announcements)
+- [Pygame - Sprites and More Collision(?)](#pygame---sprites-and-more-collision)
+- [Pygame - Buttons and Menus](#pygame---buttons-and-menus)
+- [LUNCH SPECIAL TASK](#lunch-special-task)
+- [Pygame - Music and sound effects](#pygame---music-and-sound-effects)
+- [Pygame - High-level structure](#pygame---high-level-structure)
+
+<!-- /TOC -->
+
+## Logistics and announcements
+
+- @Lunch today: brainstorm ideas for the type of game you'd like to make!
+  - This afternoon, we'll have everyone turn in their preferences, and we'll use that information to make teams.
+- Posting some of your programs
+  - There were lots of super neat pygame programs yesterday (e.g., 1000s of cats moving around the screen); if you'd like us to post (on this website) any of your (working) pygame programs, let us know! For any programs you want posted, we'll want a short description of what it does to go along with it.
+
 ## Pygame - Sprites and More Collision(?)
 
 ## Pygame - Buttons and Menus
