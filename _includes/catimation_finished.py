@@ -34,20 +34,20 @@ while True: # Enter the game loop
     #   until it reaches an edge, then move left, etc)
 
     # -- Challenge code --
-    # if direction == 'right':
-    #     # Move to the right
-    #     cat_x += 5
-    #     if cat_x >= 280: # Need to change directions
-    #         direction = 'left'
-    #         # cat_img = pygame.transform.flip(cat_img, True, False)
+    if direction == 'right':
+        # Move to the right
+        cat_x += 5
+        if cat_x >= 280: # Need to change directions
+            direction = 'left'
+            cat_img = pygame.transform.flip(cat_img, True, False)
 
 
-    # elif direction == 'left':
-    #     # Move to the left
-    #     cat_x -= 5
-    #     if cat_x <= 20: # Need to change directions
-    #         direction = 'right'
-            # cat_img = pygame.transform.flip(cat_img, True, False)
+    elif direction == 'left':
+        # Move to the left
+        cat_x -= 5
+        if cat_x <= 20: # Need to change directions
+            direction = 'right'
+            cat_img = pygame.transform.flip(cat_img, True, False)
 
     # Question: why does the back and forth look the way it does?
     # Follow-up: can you make the cat go in a square loop?
