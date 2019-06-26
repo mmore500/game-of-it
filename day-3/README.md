@@ -30,6 +30,8 @@ Drawing text in pygame is _a lot_ like drawing images.
 
 {% include codeinclude.html file='text_finished.py' %}
 
+**CHALLENGE:** Make each of the three texts a different font type and font size.
+
 ### Buttons
 
 Buttons in pygame are very simple: they're rectangles that we draw on the screen, and we detect button presses by detecting collisions between the mouse pointer and the button rectangle when the player clicks.
