@@ -64,7 +64,7 @@ For example...
 
 ## Pygame - Crank It Up to 11
 
-In order for the following code to work, you'll need to download [beep1.ogg](/media/beep1.ogg) and [Tetris.ogg](/media/Tetris.ogg) into the folder containing your Python file.
+In order for the following code to work, you'll need to download [beep1.ogg](/media/beep1.ogg), [Jeopardy.ogg](/media/Jeopardy.ogg), and [Tetris.ogg](/media/Tetris.ogg) into the folder containing your Python file.
 
 ### Sound Effects
 
@@ -99,7 +99,7 @@ while True:
 
 ```
 
-If you want to add your own sound effects, note that PyGame has limited support for different formats: only WAV and OGG files work.
+If you want to add your own sound effects, note that pygame has limited support for different formats: only WAV and OGG files work.
 
 ### Background Music
 
@@ -135,7 +135,7 @@ while True:
   clock.tick(60)
 ```
 
-If we want to switch between two tracks (maybe on different levels, in different game modes, or between the title and gameplay screens) we use `itertools.cycle` to change out the currently playing track for an alternate on a keypress.
+If we want to switch between two tracks (maybe on different levels, in different game modes, or between the title and game play screens) we use `itertools.cycle` to change out the currently playing track for an alternate on a keypress.
 
 ```python3
 import sys
@@ -173,7 +173,7 @@ If you want to add your own background music, note that PyGame has limited suppo
 
 Let's take a crack at piecing together a complete pygame with a
 1. start screen,
-2. gameplay mode with scorekeeping and lose condition, and
+2. game play mode with scorekeeping and a lose condition, and
 3. an end screen (with the option for replay).
 
 {% include codeinclude.html file='block_catchy.py' %}
