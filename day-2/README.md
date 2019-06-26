@@ -190,7 +190,7 @@ pygame.display.flip() # refresh the screen
 
 Moving on from drawing static images to simple animations isn't too difficult in pygame. We animate images by drawing an image to the screen, and then quickly drawing a slightly different image to the screen.
 
-{% include codeinclude.html file='catimation.py' %}
+{% include codeinclude.html file='catimation_finished.py' %}
 
 ## Pygame - Controls
 
@@ -310,9 +310,13 @@ Then, if you want an extra challenge, have the cat chase the mouse!
 
 ## Pygame - Text
 
-{% include codeinclude.html file='text.py' %}
+Drawing text in pygame is _a lot_ like drawing images.
+
+{% include codeinclude.html file='text_finished.py' %}
 
 ## Pygame - Collisions
+
+We can detect collisions between rectangles using a `colliderect` instruction. In the example below, we have two rectangles: one following your mouse around and another that doesn't move. Anytime the mouse-following rectangle overlaps (collides) with the non-moving rectangle, we randomize the color of the mouse-following rectangle.
 
 {% include codeinclude.html file='collision.py' %}
 
