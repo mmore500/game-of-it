@@ -1,5 +1,5 @@
 **Update**:
-*given the current situation with COVID-19, the _Making a Game of It_ workshop will take place remotely this summer.
+*given the current situation with COVID-19, the* Making a Game of It *workshop will take place remotely this summer.
 Read about our plans for classroom format, tech logistics, and participant security [here]({{ site.basurl }}/blog/remote-workshop).*
 
 By the end of camp, you will be able to develop software in Python, one of the most popular programming languages, and design and implement a video game that you can play with friends, as well.
