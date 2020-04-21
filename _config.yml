@@ -2,3 +2,4 @@ title: Making a Game of It
 description: PyGame Workshop @ Michigan State University
 show_downloads: false
 theme: jekyll-theme-cayman
+permalink: /:categories/:title/
