@@ -28,7 +28,8 @@ To preserve the interactive nature of the workshop, we plan to rely heavily on v
 Students will need a webcam, a microphone, and headphones (or speakers).
 A smart phone or tablet could suffice for all three.
 
-We will to coordinate with participants beforehand to identify any of particpants' unmet technology needs and, to the best of our ability, facilitate university resources to address them.
+Beforehand, we will provide families a step-by-step checklist to guage if they have technology resources at home necessary for successful participation. 
+If participants identify any unmet technology needs we will coordinate with participants to address them and, to the best of our ability, facilitate university resources to address them.
 One possibility includes providing university-loaned equiptment for the duration of the workshop.
 
 ## Reliable internet access
@@ -40,7 +41,6 @@ The video conferencing software we plan to use provides an audio-only connection
 In addition to a video stream, we will broadcast instructor live coding via the equivalent of google docs to allow low-bandwidth participants to follow along.
 Online course materials, which require even less bandwidth to view, will supplement real-time instruction.
 We will of course do our best to work one-on-one to catch up any students who experience temporary disruptions in their internet service.
-
 
 Again, we do not want to technology be a barrier for any participants.
 We will coordinate with participants beforehand to identify internet access issues that could interfere with successful workshop participation and, to the best of our ability, facilitate university resources to address them.
@@ -97,7 +97,6 @@ Because room, board, and recreation activities are no longer included, workshop 
 
 However, now more than ever it will be essential to make scholarships available to students who need it to cover remaining costs.
 We will work to coordinate these.
-Failing that, an option to audit the course may be possible.
 
 ## Demand for this type of online version
 
@@ -113,5 +112,7 @@ In fact, we hope to the course can grow beyond its current enrollment to provide
 All Zoom sessions will be password-protected.
 
 All means for participant-participant interactions will be monitored by instructors.
+
+We will also ensure that at least two instructors be present in any a video conferencing or chat room when interacting with students.
 
 No personal identifying information of participants will appear on the course website.
