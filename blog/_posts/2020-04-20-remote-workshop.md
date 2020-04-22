@@ -77,7 +77,10 @@ Repl.it will allow anyone with a web browser and internet access to play a live 
 The week-long format of the class provides enough time to PyGame from the ground up, accomodating students without a background in programming, and then turn students loose on a meaningfully-complex self-directed coding project.
 We plan to keep it.
 
-However, we will shorten the instructional days by adopting a later start time (10am) to accomodate students' at-home sleep schedules.
+In conversation with other instructors who have been working remotely with high school students, long teaching sessions and full-length days are difficult to make effective use of given students' at-home learning situations.
+We will shorten the instructional days to consist of a two-hour session in the morning and a two-hour session in the afternoon.
+This will require streamlining our curriculum, and we may reorganize peripheral components of the curriculum as optional self-paced learning activities.
+In addition, we will adopt a later start time than usual (10am) to accomodate students' at-home sleep schedules.
 
 ## Class management
 
