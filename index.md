@@ -25,3 +25,4 @@ The class is taught by Computer Science and Engineering faculty and graduate stu
 - [Santiago Rodriguez Papa](https://rodsan.dev/)
   * Undergraduate Student
   * Computer Science and Engineering
+  * Minors: game development and math
