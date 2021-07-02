@@ -17,5 +17,11 @@ The class is taught by Computer Science and Engineering faculty and graduate stu
   * Computer Science and Engineering
   * Ecology, Evolutionary Biology, and Behavior
   * [mmore500@msu.edu](mmore500@msu.edu)
-- [Austin Ferguson](http://austinjferguson.com/)
-- [Alexander Lalejini](https://lalejini.com/)
+- [Austin Ferguson](http://fergusonaj.com/)
+  * Graduate Student
+  * Computer Science and Engineering
+  * Ecology, Evolutionary Biology, and Behavior
+  * [fergu358@msu.edu](fergu358@msu.edu)
+- [Santiago Rodriguez Papa](https://rodsan.dev/)
+  * Undergraduate Student
+  * Computer Science and Engineering
