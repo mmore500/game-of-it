@@ -4,12 +4,11 @@ title: Resources
 description: Workshop resources
 ---
 
-- [Python v3.7 documentation](https://docs.python.org/3.7/)
+- [Python v3.9 documentation](https://docs.python.org/3.9/)
 - [pygame documentation](https://www.pygame.org/docs/)
-- [repl.it Python](https://repl.it/languages/python3)
+- [repl.it Python (Online python interpreter)](https://repl.it/languages/python3)
 - [repl.it PyGame](https://repl.it/languages/pygame)
 - [Invent with Python's 'Making Games with Python and Pygame'](https://inventwithpython.com/pygame/)
-- [Thonny](https://thonny.org/)
 
 # Example Code
 
